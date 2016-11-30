@@ -33,12 +33,10 @@ class RootViewController: UITableViewController {
     }
     
     @IBAction func addNew(_ sender: Any) {
-        guard let mood = NSEntityDescription.insertNewObject(
-            forEntityName: "Mood", into: managedObjectContext) as? Mood
-            else { fatalError("Wrong object type") }
-        mood.colors = [UIColor.red, UIColor.blue]
-        mood.date = Date()
-        try! managedObjectContext.save()
+        managedObjectContext.performChanges { [weak self] in
+            guard let strongSelf = self else { return }
+            _ = Mood.insertIntoContext(moc: strongSelf.managedObjectContext, image: UIImage())
+        }
     }
     
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D02ADE441DEE9E5A00392CAE /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE431DEE9E5A00392CAE /* TableViewDataSource.swift */; };
 		D02ADE471DEEA91B00392CAE /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE461DEEA91B00392CAE /* MoodTableViewCell.swift */; };
+		D02ADE491DEED22F00392CAE /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */; };
 		D0B902071DEC64E0002E20EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902061DEC64E0002E20EA /* AppDelegate.swift */; };
 		D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902081DEC64E0002E20EA /* RootViewController.swift */; };
 		D0B9020C1DEC64E0002E20EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B9020A1DEC64E0002E20EA /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		D02ADE431DEE9E5A00392CAE /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		D02ADE461DEEA91B00392CAE /* MoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
+		D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		D0B902031DEC64E0002E20EA /* Moody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B902061DEC64E0002E20EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B902081DEC64E0002E20EA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B902211DEC6737002E20EA /* URLExtension.swift */,
+				D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				D02ADE441DEE9E5A00392CAE /* TableViewDataSource.swift in Sources */,
 				D0B9021D1DEC6512002E20EA /* Mood.swift in Sources */,
 				D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */,
+				D02ADE491DEED22F00392CAE /* NSManagedObjectContextExtension.swift in Sources */,
 				D0B902321DEE8CE2002E20EA /* FetchedResultsDataProvider.swift in Sources */,
 				D0B9021F1DEC6530002E20EA /* ManagedObject.swift in Sources */,
 				D0B902301DEE7ED7002E20EA /* DataProvider.swift in Sources */,

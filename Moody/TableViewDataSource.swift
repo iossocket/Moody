@@ -39,7 +39,9 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
     }
     
     func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
-        guard let updates = updates else { return tableView.reloadData() }
+        guard let updates = updates else {
+            return tableView.reloadData()
+        }
         tableView.beginUpdates()
         for update in updates {
             switch update {
