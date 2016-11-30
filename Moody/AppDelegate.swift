@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let managedObjectContext = createMoodyMainContext()
-        let vc = window?.rootViewController as! RootViewController
-        vc.managedObjectContext = managedObjectContext
+        let nav = window?.rootViewController as! UINavigationController
+        (nav.topViewController as! RootViewController).managedObjectContext = managedObjectContext
         return true
     }
 }

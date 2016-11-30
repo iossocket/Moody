@@ -39,12 +39,15 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
-        return 0
+        guard let sec = fetchedResultsController.sections?[section] else { return 0 }
+        return sec.numberOfObjects
     }
     
     private let fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>
     private var updates: [DataProviderUpdate<Object>] = []
     private weak var delegate: Delegate?
+    
+    // MARK: NSFetchedResultsControllerDelegate
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         updates = []

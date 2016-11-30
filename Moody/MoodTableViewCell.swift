@@ -13,6 +13,6 @@ class MoodTableViewCell: UITableViewCell {
 
 extension MoodTableViewCell: ConfigurableCell {
     func configureForObject(_ mood: Mood) {
-        
+        self.textLabel?.text = mood.date.description
     }
 }

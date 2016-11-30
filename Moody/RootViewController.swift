@@ -18,9 +18,12 @@ class RootViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
     }
     
     private func setupTableView() {
+        tableView.tableFooterView = UIView()
+        
         let request = Mood.sortedFetchRequest
         request.returnsObjectsAsFaults = false // ?
         request.fetchBatchSize = 20
@@ -28,6 +31,16 @@ class RootViewController: UITableViewController {
         let dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
     }
+    
+    @IBAction func addNew(_ sender: Any) {
+        guard let mood = NSEntityDescription.insertNewObject(
+            forEntityName: "Mood", into: managedObjectContext) as? Mood
+            else { fatalError("Wrong object type") }
+        mood.colors = [UIColor.red, UIColor.blue]
+        mood.date = Date()
+        try! managedObjectContext.save()
+    }
+    
 }
 
 extension RootViewController: DataProviderDelegate {
