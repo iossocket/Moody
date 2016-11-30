@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		D0B902071DEC64E0002E20EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902061DEC64E0002E20EA /* AppDelegate.swift */; };
-		D0B902091DEC64E0002E20EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902081DEC64E0002E20EA /* ViewController.swift */; };
+		D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902081DEC64E0002E20EA /* RootViewController.swift */; };
 		D0B9020C1DEC64E0002E20EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B9020A1DEC64E0002E20EA /* Main.storyboard */; };
 		D0B9020E1DEC64E0002E20EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B9020D1DEC64E0002E20EA /* Assets.xcassets */; };
 		D0B902111DEC64E0002E20EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B9020F1DEC64E0002E20EA /* LaunchScreen.storyboard */; };
+		D0B9021A1DEC64EE002E20EA /* Moody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B902181DEC64EE002E20EA /* Moody.xcdatamodeld */; };
+		D0B9021D1DEC6512002E20EA /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B9021C1DEC6512002E20EA /* Mood.swift */; };
+		D0B9021F1DEC6530002E20EA /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B9021E1DEC6530002E20EA /* ManagedObject.swift */; };
+		D0B902221DEC6737002E20EA /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902211DEC6737002E20EA /* URLExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D0B902031DEC64E0002E20EA /* Moody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B902061DEC64E0002E20EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0B902081DEC64E0002E20EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0B902081DEC64E0002E20EA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D0B9020B1DEC64E0002E20EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0B9020D1DEC64E0002E20EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0B902101DEC64E0002E20EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0B902121DEC64E0002E20EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B902191DEC64EE002E20EA /* Moody.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moody.xcdatamodel; sourceTree = "<group>"; };
+		D0B9021C1DEC6512002E20EA /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		D0B9021E1DEC6530002E20EA /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
+		D0B902211DEC6737002E20EA /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,34 @@
 		D0B902051DEC64E0002E20EA /* Moody */ = {
 			isa = PBXGroup;
 			children = (
+				D0B902201DEC6726002E20EA /* Extension */,
+				D0B9021B1DEC6503002E20EA /* Model */,
 				D0B902061DEC64E0002E20EA /* AppDelegate.swift */,
-				D0B902081DEC64E0002E20EA /* ViewController.swift */,
+				D0B902081DEC64E0002E20EA /* RootViewController.swift */,
 				D0B9020A1DEC64E0002E20EA /* Main.storyboard */,
 				D0B9020D1DEC64E0002E20EA /* Assets.xcassets */,
 				D0B9020F1DEC64E0002E20EA /* LaunchScreen.storyboard */,
 				D0B902121DEC64E0002E20EA /* Info.plist */,
+				D0B902181DEC64EE002E20EA /* Moody.xcdatamodeld */,
 			);
 			path = Moody;
+			sourceTree = "<group>";
+		};
+		D0B9021B1DEC6503002E20EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0B9021C1DEC6512002E20EA /* Mood.swift */,
+				D0B9021E1DEC6530002E20EA /* ManagedObject.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D0B902201DEC6726002E20EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0B902211DEC6737002E20EA /* URLExtension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +124,7 @@
 				TargetAttributes = {
 					D0B902021DEC64DF002E20EA = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -136,8 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B902091DEC64E0002E20EA /* ViewController.swift in Sources */,
+				D0B9021D1DEC6512002E20EA /* Mood.swift in Sources */,
+				D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */,
+				D0B9021F1DEC6530002E20EA /* ManagedObject.swift in Sources */,
+				D0B9021A1DEC64EE002E20EA /* Moody.xcdatamodeld in Sources */,
 				D0B902071DEC64E0002E20EA /* AppDelegate.swift in Sources */,
+				D0B902221DEC6737002E20EA /* URLExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Moody/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.Moody;
@@ -270,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Moody/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.Moody;
@@ -299,6 +333,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0B902181DEC64EE002E20EA /* Moody.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0B902191DEC64EE002E20EA /* Moody.xcdatamodel */,
+			);
+			currentVersion = D0B902191DEC64EE002E20EA /* Moody.xcdatamodel */;
+			path = Moody.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D0B901FB1DEC64DF002E20EA /* Project object */;
 }
