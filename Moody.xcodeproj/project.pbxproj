@@ -12,6 +12,10 @@
 		D02ADE491DEED22F00392CAE /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */; };
 		D02ADE4B1DEEFF5400392CAE /* MoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE4A1DEEFF5400392CAE /* MoodDetailViewController.swift */; };
 		D02ADE501DEF9B1200392CAE /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE4F1DEF9B1200392CAE /* ManagedObjectObserver.swift */; };
+		D02ADE521DEFA9A800392CAE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE511DEFA9A800392CAE /* Country.swift */; };
+		D02ADE541DEFAA9A00392CAE /* ISO3166.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE531DEFAA9A00392CAE /* ISO3166.swift */; };
+		D02ADE561DEFAE0F00392CAE /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE551DEFAE0F00392CAE /* Continent.swift */; };
+		D090D9CD1DEFB3F4004DE7F8 /* LocalizedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090D9CC1DEFB3F4004DE7F8 /* LocalizedStringConvertible.swift */; };
 		D0B902071DEC64E0002E20EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902061DEC64E0002E20EA /* AppDelegate.swift */; };
 		D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902081DEC64E0002E20EA /* RootViewController.swift */; };
 		D0B9020C1DEC64E0002E20EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B9020A1DEC64E0002E20EA /* Main.storyboard */; };
@@ -31,6 +35,10 @@
 		D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		D02ADE4A1DEEFF5400392CAE /* MoodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodDetailViewController.swift; sourceTree = "<group>"; };
 		D02ADE4F1DEF9B1200392CAE /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
+		D02ADE511DEFA9A800392CAE /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		D02ADE531DEFAA9A00392CAE /* ISO3166.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166.swift; sourceTree = "<group>"; };
+		D02ADE551DEFAE0F00392CAE /* Continent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		D090D9CC1DEFB3F4004DE7F8 /* LocalizedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStringConvertible.swift; sourceTree = "<group>"; };
 		D0B902031DEC64E0002E20EA /* Moody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B902061DEC64E0002E20EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B902081DEC64E0002E20EA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,10 @@
 			children = (
 				D0B9021C1DEC6512002E20EA /* Mood.swift */,
 				D0B9021E1DEC6530002E20EA /* ManagedObject.swift */,
+				D02ADE511DEFA9A800392CAE /* Country.swift */,
+				D02ADE551DEFAE0F00392CAE /* Continent.swift */,
+				D02ADE531DEFAA9A00392CAE /* ISO3166.swift */,
+				D090D9CC1DEFB3F4004DE7F8 /* LocalizedStringConvertible.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -209,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02ADE521DEFA9A800392CAE /* Country.swift in Sources */,
 				D02ADE441DEE9E5A00392CAE /* TableViewDataSource.swift in Sources */,
 				D0B9021D1DEC6512002E20EA /* Mood.swift in Sources */,
 				D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */,
@@ -218,7 +231,10 @@
 				D0B902321DEE8CE2002E20EA /* FetchedResultsDataProvider.swift in Sources */,
 				D0B9021F1DEC6530002E20EA /* ManagedObject.swift in Sources */,
 				D0B902301DEE7ED7002E20EA /* DataProvider.swift in Sources */,
+				D090D9CD1DEFB3F4004DE7F8 /* LocalizedStringConvertible.swift in Sources */,
 				D02ADE471DEEA91B00392CAE /* MoodTableViewCell.swift in Sources */,
+				D02ADE541DEFAA9A00392CAE /* ISO3166.swift in Sources */,
+				D02ADE561DEFAE0F00392CAE /* Continent.swift in Sources */,
 				D0B9021A1DEC64EE002E20EA /* Moody.xcdatamodeld in Sources */,
 				D0B902071DEC64E0002E20EA /* AppDelegate.swift in Sources */,
 				D0B902221DEC6737002E20EA /* URLExtension.swift in Sources */,
