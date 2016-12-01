@@ -9,14 +9,14 @@
 import CoreData
 
 extension NSManagedObjectContext {
-    public func insertObject<A: ManagedObject>() -> A where A: ManagedObjectType {
+    func insertObject<A: ManagedObject>() -> A where A: ManagedObjectType {
         guard let obj = NSEntityDescription.insertNewObject(forEntityName: A.entityName, into: self) as? A else {
             fatalError("Wrong object type")
         }
         return obj
     }
     
-    public func saveOrRollback() -> Bool {
+    func saveOrRollback() -> Bool {
         do {
             try save()
             return true
@@ -26,7 +26,7 @@ extension NSManagedObjectContext {
         }
     }
     
-    public func performChanges(block: @escaping () -> ()) {
+    func performChanges(block: @escaping () -> ()) {
         perform {
             block()
             _ = self.saveOrRollback()
@@ -52,38 +52,38 @@ extension NSManagedObjectContext {
     }
 }
 
-public struct ObjectsDidChangeNotification {
+struct ObjectsDidChangeNotification {
     
     init(note: Notification) {
         assert(note.name == NSNotification.Name.NSManagedObjectContextObjectsDidChange)
         notification = note
     }
     
-    public var insertedObjects: Set<ManagedObject> {
+    var insertedObjects: Set<ManagedObject> {
         return objectsForKey(key: NSInsertedObjectsKey)
     }
     
-    public var updatedObjects: Set<ManagedObject> {
+    var updatedObjects: Set<ManagedObject> {
         return objectsForKey(key: NSUpdatedObjectsKey)
     }
     
-    public var deletedObjects: Set<ManagedObject> {
+    var deletedObjects: Set<ManagedObject> {
         return objectsForKey(key: NSDeletedObjectsKey)
     }
     
-    public var refreshedObjects: Set<ManagedObject> {
+    var refreshedObjects: Set<ManagedObject> {
         return objectsForKey(key: NSRefreshedObjectsKey)
     }
     
-    public var invalidatedObjects: Set<ManagedObject> {
+    var invalidatedObjects: Set<ManagedObject> {
         return objectsForKey(key: NSInvalidatedObjectsKey)
     }
     
-    public var invalidatedAllObjects: Bool {
+    var invalidatedAllObjects: Bool {
         return notification.userInfo?[NSInvalidatedAllObjectsKey] != nil
     }
     
-    public var managedObjectContext: NSManagedObjectContext {
+    var managedObjectContext: NSManagedObjectContext {
         guard let c = notification.object as? NSManagedObjectContext else { fatalError("Invalid notification object") }
         return c
     }
@@ -98,26 +98,26 @@ public struct ObjectsDidChangeNotification {
     
 }
 
-public struct ContextDidSaveNotification {
+struct ContextDidSaveNotification {
     
-    public init(note: Notification) {
+    init(note: Notification) {
         guard note.name == NSNotification.Name.NSManagedObjectContextDidSave else { fatalError() }
         notification = note
     }
     
-    public var insertedObjects: AnyIterator<ManagedObject> {
+    var insertedObjects: AnyIterator<ManagedObject> {
         return generatorForKey(key: NSInsertedObjectsKey)
     }
     
-    public var updatedObjects: AnyIterator<ManagedObject> {
+    var updatedObjects: AnyIterator<ManagedObject> {
         return generatorForKey(key: NSUpdatedObjectsKey)
     }
     
-    public var deletedObjects: AnyIterator<ManagedObject> {
+    var deletedObjects: AnyIterator<ManagedObject> {
         return generatorForKey(key: NSDeletedObjectsKey)
     }
     
-    public var managedObjectContext: NSManagedObjectContext {
+    var managedObjectContext: NSManagedObjectContext {
         guard let c = notification.object as? NSManagedObjectContext else { fatalError("Invalid notification object") }
         return c
     }

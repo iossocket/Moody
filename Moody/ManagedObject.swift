@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-public class ManagedObject: NSManagedObject {
+class ManagedObject: NSManagedObject {
 
 }
 
-public protocol ManagedObjectType: class {
+protocol ManagedObjectType: class {
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
     var managedObjectContext: NSManagedObjectContext? { get }
@@ -21,11 +21,11 @@ public protocol ManagedObjectType: class {
 }
 
 extension ManagedObjectType {
-    public static var defaultSortDescriptors: [NSSortDescriptor] {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
     }
     
-    public static var sortedFetchRequest: NSFetchRequest<NSFetchRequestResult> {
+    static var sortedFetchRequest: NSFetchRequest<NSFetchRequestResult> {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
         return request

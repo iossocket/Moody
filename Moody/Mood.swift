@@ -9,11 +9,11 @@
 import CoreData
 import UIKit
 
-public final class Mood: ManagedObject {
-    @NSManaged public private(set) var date: Date
-    @NSManaged public private(set) var colors: Array<UIColor>
+class Mood: ManagedObject {
+    @NSManaged private(set) var date: Date
+    @NSManaged private(set) var colors: Array<UIColor>
     
-    public static func insertIntoContext(moc: NSManagedObjectContext, image: UIImage) -> Mood {
+    static func insertIntoContext(moc: NSManagedObjectContext, image: UIImage) -> Mood {
         let mood: Mood = moc.insertObject()
         mood.colors = [UIColor.red, UIColor.blue]
         mood.date = Date()
@@ -22,15 +22,15 @@ public final class Mood: ManagedObject {
 }
 
 extension Mood: ManagedObjectType {
-    public static var entityName: String {
+    static var entityName: String {
         return "Mood"
     }
     
-    public static var defaultSortDescriptors: [NSSortDescriptor] {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "date", ascending: false)]
     }
     
-    public static var defaultPredicate: NSPredicate {
+    static var defaultPredicate: NSPredicate {
         return NSPredicate(format: "date like %@", "")
     }
 }

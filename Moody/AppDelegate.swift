@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-public func createMoodyMainContext() -> NSManagedObjectContext {
+func createMoodyMainContext() -> NSManagedObjectContext {
     let bundles = [Bundle(for: Mood.self)]
     guard let model = NSManagedObjectModel.mergedModel(from: bundles) else {
         fatalError("modal not found")
