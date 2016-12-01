@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Moods-->
         <scene sceneID="ve6-Cq-Cr3">
             <objects>
                 <tableViewController id="mgx-g3-CTs" customClass="RootViewController" customModule="Moody" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,9 +21,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0u-WL-lSa" id="ZEw-Tp-ReJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="STl-1E-hEj" kind="show" id="cJe-K7-ryU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -31,7 +34,7 @@
                             <outlet property="delegate" destination="mgx-g3-CTs" id="zHr-CT-3Nb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="K3i-9l-x0v">
+                    <navigationItem key="navigationItem" title="Moods" id="K3i-9l-x0v">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bd4-eL-03J">
                             <connections>
                                 <action selector="addNew:" destination="mgx-g3-CTs" id="krl-1h-CIh"/>
@@ -42,6 +45,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9l-9z-dGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1519" y="118"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="MfU-TA-hno">
+            <objects>
+                <viewController id="STl-1E-hEj" customClass="MoodDetailViewController" customModule="Moody" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="piz-eJ-LX1"/>
+                        <viewControllerLayoutGuide type="bottom" id="WXt-6D-v4M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V2a-NO-SPV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="V9F-J5-0V4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="lNx-bQ-UFC">
+                            <connections>
+                                <action selector="deleteMood:" destination="STl-1E-hEj" id="zl5-gV-K1l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzX-Hf-O7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2273" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ibc-BL-Aco">

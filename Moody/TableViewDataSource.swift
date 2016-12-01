@@ -13,11 +13,6 @@ protocol DataSourceDelegate: class {
     func cellIdentifierForObject(_ object: Object) -> String
 }
 
-protocol ConfigurableCell {
-    associatedtype DataSource
-    func configureForObject(_ object: DataSource)
-}
-
 class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell>: NSObject, UITableViewDataSource where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object {
     
     private let tableView: UITableView

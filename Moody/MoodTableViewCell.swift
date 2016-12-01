@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ConfigurableCell {
+    associatedtype DataSource
+    func configureForObject(_ object: DataSource)
+}
+
 class MoodTableViewCell: UITableViewCell {
 }
 

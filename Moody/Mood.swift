@@ -29,4 +29,8 @@ extension Mood: ManagedObjectType {
     public static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "date", ascending: false)]
     }
+    
+    public static var defaultPredicate: NSPredicate {
+        return NSPredicate(format: "date like %@", "")
+    }
 }

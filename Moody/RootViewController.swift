@@ -30,6 +30,7 @@ class RootViewController: UITableViewController {
         let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         let dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
+        tableView.delegate = self
     }
     
     @IBAction func addNew(_ sender: Any) {
@@ -37,6 +38,14 @@ class RootViewController: UITableViewController {
             guard let strongSelf = self else { return }
             _ = Mood.insertIntoContext(moc: strongSelf.managedObjectContext, image: UIImage())
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? MoodDetailViewController else { fatalError("Wrong view controller type") }
+        guard let mood = dataSource.selectedObject else {
+            fatalError("Showing detail, but no selected mood")
+        }
+        vc.mood = mood
     }
     
 }
@@ -50,6 +59,25 @@ extension RootViewController: DataProviderDelegate {
 extension RootViewController: DataSourceDelegate {
     func cellIdentifierForObject(_ object: Mood) -> String {
         return "MoodCell"
+    }
+}
+
+extension RootViewController {
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Delete"
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("hehe")
     }
 }
 

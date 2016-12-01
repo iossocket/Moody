@@ -10,6 +10,8 @@
 		D02ADE441DEE9E5A00392CAE /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE431DEE9E5A00392CAE /* TableViewDataSource.swift */; };
 		D02ADE471DEEA91B00392CAE /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE461DEEA91B00392CAE /* MoodTableViewCell.swift */; };
 		D02ADE491DEED22F00392CAE /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */; };
+		D02ADE4B1DEEFF5400392CAE /* MoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE4A1DEEFF5400392CAE /* MoodDetailViewController.swift */; };
+		D02ADE501DEF9B1200392CAE /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ADE4F1DEF9B1200392CAE /* ManagedObjectObserver.swift */; };
 		D0B902071DEC64E0002E20EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902061DEC64E0002E20EA /* AppDelegate.swift */; };
 		D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B902081DEC64E0002E20EA /* RootViewController.swift */; };
 		D0B9020C1DEC64E0002E20EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B9020A1DEC64E0002E20EA /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		D02ADE431DEE9E5A00392CAE /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		D02ADE461DEEA91B00392CAE /* MoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		D02ADE481DEED22F00392CAE /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
+		D02ADE4A1DEEFF5400392CAE /* MoodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodDetailViewController.swift; sourceTree = "<group>"; };
+		D02ADE4F1DEF9B1200392CAE /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
 		D0B902031DEC64E0002E20EA /* Moody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B902061DEC64E0002E20EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B902081DEC64E0002E20EA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,16 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		D02ADE4E1DEF0A5200392CAE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D0B9020D1DEC64E0002E20EA /* Assets.xcassets */,
+				D0B9020F1DEC64E0002E20EA /* LaunchScreen.storyboard */,
+				D0B902121DEC64E0002E20EA /* Info.plist */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		D0B901FA1DEC64DF002E20EA = {
 			isa = PBXGroup;
 			children = (
@@ -80,16 +94,15 @@
 		D0B902051DEC64E0002E20EA /* Moody */ = {
 			isa = PBXGroup;
 			children = (
+				D02ADE4E1DEF0A5200392CAE /* Config */,
 				D02ADE451DEE9FF200392CAE /* View */,
 				D0B9022E1DEE7EC5002E20EA /* DataSource */,
 				D0B902201DEC6726002E20EA /* Extension */,
 				D0B9021B1DEC6503002E20EA /* Model */,
 				D0B902061DEC64E0002E20EA /* AppDelegate.swift */,
 				D0B902081DEC64E0002E20EA /* RootViewController.swift */,
+				D02ADE4A1DEEFF5400392CAE /* MoodDetailViewController.swift */,
 				D0B9020A1DEC64E0002E20EA /* Main.storyboard */,
-				D0B9020D1DEC64E0002E20EA /* Assets.xcassets */,
-				D0B9020F1DEC64E0002E20EA /* LaunchScreen.storyboard */,
-				D0B902121DEC64E0002E20EA /* Info.plist */,
 				D0B902181DEC64EE002E20EA /* Moody.xcdatamodeld */,
 			);
 			path = Moody;
@@ -119,6 +132,7 @@
 				D0B9022F1DEE7ED7002E20EA /* DataProvider.swift */,
 				D0B902311DEE8CE2002E20EA /* FetchedResultsDataProvider.swift */,
 				D02ADE431DEE9E5A00392CAE /* TableViewDataSource.swift */,
+				D02ADE4F1DEF9B1200392CAE /* ManagedObjectObserver.swift */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -198,6 +212,8 @@
 				D02ADE441DEE9E5A00392CAE /* TableViewDataSource.swift in Sources */,
 				D0B9021D1DEC6512002E20EA /* Mood.swift in Sources */,
 				D0B902091DEC64E0002E20EA /* RootViewController.swift in Sources */,
+				D02ADE501DEF9B1200392CAE /* ManagedObjectObserver.swift in Sources */,
+				D02ADE4B1DEEFF5400392CAE /* MoodDetailViewController.swift in Sources */,
 				D02ADE491DEED22F00392CAE /* NSManagedObjectContextExtension.swift in Sources */,
 				D0B902321DEE8CE2002E20EA /* FetchedResultsDataProvider.swift in Sources */,
 				D0B9021F1DEC6530002E20EA /* ManagedObject.swift in Sources */,
